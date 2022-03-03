@@ -47,7 +47,10 @@ addEventListener('keyup', event => {
   document.removeEventListener('mouseout', onMouseOut);
   document.removeEventListener('keydown', onRemove);
 
-  hoveredElement.style.outline = 'none';
+  if (hoveredElement !== null) {
+    hoveredElement.style.outline = 'none';
+    hoveredElement = null;
+  }
 })
 
 function getSelectors() {
